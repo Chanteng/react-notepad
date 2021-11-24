@@ -13,6 +13,18 @@ function App() {
     setNotes([...notes, note])
   }
 
+  function editNote(newNotes, noteId) {
+    const editedNote = notes.map((note)=>{
+      if (noteId === note.id) {
+        return newNotes;
+      } else {
+        return note
+      }
+    })
+    setNotes(editedNote)
+  }
+
+
   function deleteNote(noteId) {
     const filteredNotes = notes.filter((note)=> {
       return noteId !== note.id;
@@ -25,7 +37,7 @@ function App() {
    <>
   <Main />
   <NoteForm addNote={addNote} />
-  <NoteList notes={notes} deleteNote={deleteNote} />
+  <NoteList notes={notes} deleteNote={deleteNote} editNote={editNote} />
    </>
   );
 }

@@ -12,6 +12,7 @@ function NoteList(props) {
                     note={note}
                     key={note.id}
                     deleteNote={props.deleteNote}
+                    editNote={props.editNote}
                     />
                 )
             })}
