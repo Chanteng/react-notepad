@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Button, Modal, Container } from "react-bootstrap";
 import EditNote from "./EditNote"
+import {connect} from 'react-redux'
+import {deleteNote} from '../actions/noteAction'
 
 function Note(props) {
   const note = props.note;
@@ -14,6 +16,8 @@ function toggleModal() {
     setShowModal(!showModal);
   }
 
+  
+
   return (
     <div>
       <Container>
@@ -23,7 +27,7 @@ function toggleModal() {
       <Button variant="primary" onClick={() => toggleModal()}>
         Edit
       </Button>
-      <Button variant="danger" onclick={()=>props.deleteNote(note.id)}>
+      <Button variant="danger" onClick={()=> props.deleteNote(note.id)}>
         Delete
       </Button>
 
@@ -48,4 +52,8 @@ function toggleModal() {
   );
 }
 
-export default Note;
+const mapDispatch = {
+  deleteNote
+}
+
+export default connect(null, mapDispatch) (Note);

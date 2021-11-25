@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import {connect} from 'react-redux'
+import {editNote} from '../actions/noteAction'
 
 
 function EditNote(props) {
 
     const [title, setTitle] = useState(props.note.title);
-    const [date, setDate] = useState(props.note.number);
-    const [textarea, setTextArea] = useState(props.note.location);
+    const [date, setDate] = useState(props.note.date);
+    const [textarea, setTextArea] = useState(props.note.textarea);
   
     const handleTitleChange = (e) => {
       setTitle(e.target.value);
@@ -29,7 +31,7 @@ function EditNote(props) {
         id: props.note.id,
       };
   
-      props.editNote(editedNote, props.note.id);
+      props.editNote(props.note.id, editedNote);
       props.toggleModal();
     }
 
@@ -72,4 +74,8 @@ function EditNote(props) {
     )
 }
 
-export default EditNote
+const mapDispatch = {
+    editNote
+}
+
+export default connect(null, mapDispatch) (EditNote)

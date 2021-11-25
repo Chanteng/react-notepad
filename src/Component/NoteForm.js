@@ -1,6 +1,8 @@
 import React, { useState} from 'react'
 import {v4 as uuid} from "uuid"
 import { Navbar, Container, Form, Button } from "react-bootstrap";
+import {connect} from 'react-redux'
+import {addNote} from '../actions/noteAction'
 
 function NoteForm(props) {
     const [title, setTitle] = useState("");
@@ -59,4 +61,8 @@ function NoteForm(props) {
     )
 }
 
-export default NoteForm
+const mapDispatch = {
+  addNote
+}
+
+export default connect(null, mapDispatch) (NoteForm)
