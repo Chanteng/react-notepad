@@ -1,6 +1,6 @@
 import React, { useState} from 'react'
 import {v4 as uuid} from "uuid"
-import { Navbar, Container, Form, Button } from "react-bootstrap";
+import { Container, Form, Button } from "react-bootstrap";
 import {connect} from 'react-redux'
 import {addNote} from '../actions/noteAction'
 
@@ -18,7 +18,6 @@ function NoteForm(props) {
           date: date,
           textarea: textarea,
           id: uuid()
-         // id: uuid(),
           
         };
 

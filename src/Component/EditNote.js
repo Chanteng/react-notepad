@@ -52,7 +52,7 @@ function EditNote(props) {
          <Form.Label>Date</Form.Label>
          <Form.Control
            name="date"
-           placeholder="Enter Number"
+           placeholder="Enter Date"
            value={date}
            onChange={(e) => handleDateChange(e)}
          />

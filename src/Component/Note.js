@@ -16,17 +16,20 @@ function toggleModal() {
     setShowModal(!showModal);
   }
 
-  
+  console.log(props);
 
   return (
+    
     <div>
       <Container>
       <h1>Title: {note.title}</h1>
       <h3>Date: {note.date}</h3>
       <h3>Text Area: {note.textarea}</h3>
+
       <Button variant="primary" onClick={() => toggleModal()}>
         Edit
       </Button>
+      
       <Button variant="danger" onClick={()=> props.deleteNote(note.id)}>
         Delete
       </Button>
@@ -41,7 +44,7 @@ function toggleModal() {
 
           <EditNote
             note={note}
-            editNote={props.editNote}
+            // editNote={props.editNote}
             toggleModal={toggleModal}
           />
         </Modal.Body>

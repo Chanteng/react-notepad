@@ -1,6 +1,5 @@
-import React, {useState} from "react";
-import { Navbar, Container, Form, Button } from "react-bootstrap";
-import { v4 as uuid } from "uuid";
+import React from "react";
+import { Navbar, Container } from "react-bootstrap";
 
 
 function Main(props) {

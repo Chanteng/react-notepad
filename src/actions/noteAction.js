@@ -15,9 +15,9 @@ export const deleteNote = (noteId) => {
 };
 
 
-export const editNote = (noteId, updatedNotes) => {
+export const editNote = (noteId, updatedNote) => {
     return {
         type: "EDIT_NOTE", 
-        payload: {noteId, updatedNotes}
+        payload: {noteId, updatedNote}
     }
 }

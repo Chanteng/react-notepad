@@ -2,17 +2,23 @@ const initialState = {
   notes: [],
 };
 
+
 const noteReducers = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_NOTE":
       //   console.log(action.payload);
       return { ...state, notes: [...state.notes, action.payload] };
 
+
+
     case "DELETE_NOTE":
       const filteredNotes = state.notes.filter(
         (note) => note.id !== action.payload
       );
       return { ...state, notes: filteredNotes };
+
+
+
 
     case "EDIT_NOTE":
       const updatedNote = state.notes.map((note) => {
@@ -28,5 +34,7 @@ const noteReducers = (state = initialState, action) => {
       return state;
   }
 };
+
+
 
 export default noteReducers;
